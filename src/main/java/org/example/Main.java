@@ -15,7 +15,7 @@ public class Main {
 
         try {
             entityManager.getTransaction().begin();
-
+/*
             Categoria pescaderia = Categoria.builder()
                     .denominacion("pescaderia")
                     .build();
@@ -97,14 +97,23 @@ public class Main {
                     .fecha(Date.valueOf("2024-09-04"))
                     .cliente(cliente)
                     .detalleFacturas(detalleFacturas)
-                    .build();
+                    .build();*/
 
-            entityManager.persist(factura);
+            /*para modificar*/
+            Articulo Salmon=entityManager.find(Articulo.class,1L);
+            Salmon.setCantidad(81);
+            entityManager.merge(Salmon);
+
+            /*para eliminar*/
+            Factura fac = entityManager.find(Factura.class, 1L);
+            entityManager.remove(fac);
+
+            /*entityManager.persist(factura);*/
             entityManager.flush();
             entityManager.getTransaction().commit();
 
-            Factura facturaDB = entityManager.find(Factura.class, factura.getId());
-            System.out.println("Se recupera factura n° " + facturaDB.getNumero());
+            //Factura facturaDB = entityManager.find(Factura.class, factura.getId());
+            //System.out.println("Se recupera factura n° " + facturaDB.getNumero());
 
         } catch (Exception e) {
             entityManager.getTransaction().rollback();

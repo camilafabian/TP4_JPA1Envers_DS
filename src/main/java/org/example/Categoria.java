@@ -1,6 +1,7 @@
 package org.example;
 
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,6 +14,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Audited
 @Table(name = "Categoria")
 public class Categoria implements Serializable {
 
