@@ -1,10 +1,8 @@
-# Proyecto: TP N°3 JPA
+# Proyecto: TP N°4 JPA Envers
 
-Este proyecto incluye un carpeta que puedes ejecutar en Intellij IDEA para ejecutar el contenido.
-Utiliza java 17, gradle y base de datos H2.
+PracticoJavaJPAEnvers
 
-## Requisitos
+Descargar el zip, extraerlo y abrirlo en un IDE. Ejecutar el main para que se creen las tablas en la base de datos h2. Para probar la auditoria se
+pueden comentar toda la parte del main que crea las tablas y descomentar el ejemplo para actualizar la tabla de clientes, en el archivo de
 
-- Descargar el archivo como .zip
-- Descomprimirlo
-- Abrir en Intellij Idea y ejecutarlo.
+persistence.xml debemos cambiar el “create” por “update”
